@@ -20,7 +20,7 @@ pipeline
         {
             steps
             {
-                sh 'bocker build -t myimage .'
+                sh 'docker build -t myimage .'
             }
         }
         stage("create container")
