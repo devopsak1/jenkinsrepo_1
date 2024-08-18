@@ -16,6 +16,14 @@ pipeline
                 git url:'https://github.com/devopsak1/jenkinsrepo_1.git',branch:'main'
             }
         }
+        stage("cleanup stage")
+        {
+            steps
+            {
+                sh 'docker rm -f $(docker ps -aq)'
+                sh 'docker rmi -f myimage'
+            }
+        }
         stage("Docker build image")
         {
             steps
